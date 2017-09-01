@@ -75,11 +75,11 @@ class EmployeeController extends Controller{
 					'email' => $request->input('emp_name'),
 				);
 				/*Send Mail to New Employee*/
-				Mail::send('emails.welcome', $data, function ($message) {
-					$message->from('patel.tejas.mca@gmail.com', 'Tejas Patel');
-					$message->to('patel.tejas.mca@gmail.com');
-					$message->subject('Employee Added');
-				});
+				// Mail::send('emails.welcome', $data, function ($message) {
+				// 	$message->from('patel.tejas.mca@gmail.com', 'Tejas Patel');
+				// 	$message->to('patel.tejas.mca@gmail.com');
+				// 	$message->subject('Employee Added');
+				// });
 				$response = array('status'=>'success','msg'=>"Employee added successfully.");
 			}
 		}

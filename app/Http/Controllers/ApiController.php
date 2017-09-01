@@ -112,10 +112,10 @@ class ApiController extends Controller
 					'name' => $request->input('emp_name'),
 				);
 				/*Send Mail to New Employee*/
-				Mail::send('emails.welcome', $data, function ($message) {
-					$message->from('patel.tejas.mca@gmail.com', 'Tejas Patel');
-					$message->to('ritvick.paliwal@gmail.com@gmail.com')->subject('Employee Added');
-				});
+				// Mail::send('emails.welcome', $data, function ($message) {
+				// 	$message->from('patel.tejas.mca@gmail.com', 'Tejas Patel');
+				// 	$message->to('ritvick.paliwal@gmail.com@gmail.com')->subject('Employee Added');
+				// });
 				$response = array('status'=>true,'message'=>"Employee added successfully.");
 			}else{
 				$response = array('status'=>false,'message'=>'Problem in adding employee. Please try after some time.');
