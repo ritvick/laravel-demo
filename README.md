@@ -32,4 +32,35 @@ This is a simple demo of Emploee add, edit, list functionality in Laravel framew
     password: admin
     ```
     
+### Unit Tests
+1. Run following command from root of the project
+    ```
+    phpunit
     
+### API support
+Please use postman to test these API's 
+ 1. /api/login
+    Request Object
+    ```
+    username: admin@test.com
+    password: admin
+    ```
+    
+    Response Object
+    ```
+    {
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sYXJhdmVsLmRldi9hcGkvbG9naW4iLCJpYXQiOjE1MDQyNzk1NTIsImV4cCI6MTUwNDI4MzE1MiwibmJmIjoxNTA0Mjc5NTUyLCJqdGkiOiJBQmdjOTdtZEpoMnp4U291In0.VCVLWrNZk7MaOokw2rKbxTbKJxDRFNoFo0gXO-ryQ4Y",
+    "valid": true
+    }
+    ```
+2. /api/get_employee
+    ```
+    URL Param
+    ?id=3&token=asda21312asdas
+    ```
+    Note: Please provide correct values above. Token will be obtained from Request #1
+3. /api/addupdate_employee
+4. /api/delete_employee
+
+### Support
+Please contact Autor for any support requests or raise and issue in github. 

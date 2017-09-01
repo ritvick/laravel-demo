@@ -11,9 +11,11 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testBasicExample()
-    {
-        $this->visit('/')
-             ->see('Laravel 5');
+    
+    public function testLogin() {
+         $this->json('POST', '/api/login', ['email' => 'admin@test.com', "password" => "admin"])
+             ->seeJson([
+                 'valid' => true,
+             ]);
     }
 }

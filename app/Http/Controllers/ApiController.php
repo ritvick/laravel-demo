@@ -38,7 +38,7 @@ class ApiController extends Controller
         } catch (JWTAuthException $e) {
             return response()->json(['failed_to_create_token'], 500);
         }
-        return response()->json(compact('token'));
+        return response()->json(array('token' => $token, 'valid' => true));
     }
 	
 	/**
@@ -114,7 +114,7 @@ class ApiController extends Controller
 				/*Send Mail to New Employee*/
 				Mail::send('emails.welcome', $data, function ($message) {
 					$message->from('patel.tejas.mca@gmail.com', 'Tejas Patel');
-					$message->to('patel.tejas.mca@gmail.com')->subject('Employee Added');
+					$message->to('ritvick.paliwal@gmail.com@gmail.com')->subject('Employee Added');
 				});
 				$response = array('status'=>true,'message'=>"Employee added successfully.");
 			}else{

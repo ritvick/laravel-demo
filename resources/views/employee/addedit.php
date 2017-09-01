@@ -45,25 +45,25 @@ include('resources/views/includes/header.blade.php');
 							<div class="form-group">
 								<label for="inputEmail3" class="col-sm-2 control-label"> Address</label>
 								<div class="col-sm-6">
-									<input id="autocomplete" name="emp_address" class="form-control" placeholder="Address" value="<?=@$employee->emp_address?>" />
+									<input id="autocomplete" name="emp_address" class="form-control" placeholder="Address" value="<?=@$employee->emp_address?>" onblur="fillInAddress()"/>
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="inputEmail3" class="col-sm-2 control-label"> City</label>
 								<div class="col-sm-6">
-									<input type="text" id="locality" name="emp_city" class="form-control" placeholder="City" value="<?=@$employee->emp_city?>" />
+									<input type="text" id="locality" name="emp_city" class="form-control" placeholder="City" value="<?=@$employee->emp_city?>" readonly />
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="inputEmail3" class="col-sm-2 control-label"> State</label>
 								<div class="col-sm-6">
-									<input type="text" id="administrative_area_level_1" name="emp_state" class="form-control" placeholder="State" value="<?=@$employee->emp_state?>" />
+									<input type="text" id="administrative_area_level_1" name="emp_state" class="form-control" placeholder="State" value="<?=@$employee->emp_state?>" readonly/>
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="inputEmail3" class="col-sm-2 control-label"> Country</label>
 								<div class="col-sm-6">
-									<input type="text" id="country" name="emp_country" class="form-control" placeholder="Country" value="<?=@$employee->emp_country?>" />
+									<input type="text" id="country" name="emp_country" class="form-control" placeholder="Country" value="<?=@$employee->emp_country?>" readonly />
 								</div>
 							</div>
 							<div class="form-group">
@@ -175,7 +175,9 @@ include('resources/views/includes/header.blade.php');
         // Get each component of the address from the place details
         // and fill the corresponding field on the form.
 		//console.log(place.address_components);
+		if(typeof place.address_components != 'undefined')
         for (var i = 0; i < place.address_components.length; i++) {
+
           var addressType = place.address_components[i].types[0];
           if (componentForm[addressType]) {
             var val = place.address_components[i][componentForm[addressType]];
