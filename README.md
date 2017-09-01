@@ -1,6 +1,6 @@
 ### Overview
 This is a simple demo of Emploee add, edit, list functionality in Laravel framework.
-Online Demo: [http://laravel-demo.ritvick.com/] (http://laravel-demo.ritvick.com/)
+Online Demo: http://laravel-demo.ritvick.com/
 
 ### Installation
 1. Create a virtual host on your machine
